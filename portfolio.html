@@ -78,150 +78,388 @@
 
 
 <!-- panorama -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
-    <script src="assets/py/generate.py"></script>
-     <!-- Menentukan tinggi image 360 -->
-     <style>
-      body {
-          margin: 0;
-          padding: 0;
-      }
-      #pannellum-image-360 {
-          height: 480px;
-      }
-  </style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+<script src="assets/py/generate.py"></script>
+ <!-- Menentukan tinggi image 360 -->
+ <style>
+  body {
+      margin: 0;
+      padding: 0;
+  }
+  #pannellum-image-360 {
+      height: 480px;
+  }
+</style>
 </head>
 
 <body>
-  <div id="pannellum-image-360"></div>
-  <script>
-      // parameter pertama adalah id (target) element
-      // parameter kedua adalah option nya
-      pannellum.viewer('pannellum-image-360', {
-          default: {
-              // scene yang akan ditampilkan pertama kali
-              firstScene: 'depan',
-              author: 'Shafa Marwah Studio',
-              sceneFadeDuration: 1000
+<div id="pannellum-image-360"></div>
+<script>
+  // parameter pertama adalah id (target) element
+  // parameter kedua adalah option nya
+  pannellum.viewer('pannellum-image-360', {
+      default: {
+          // scene yang akan ditampilkan pertama kali
+          firstScene: 'd4',
+          author: 'Shafa Marwah Studio',
+          sceneFadeDuration: 1100
+      },
+      scenes: {
+        d1: {
+              title: 'Carport',
+              pitch: 0,
+              yaw: 0,
+              hfov: 100,
+              type: 'equirectangular',
+              panorama: 'https://i.ibb.co/2KdDFRh/p1.jpg',
+              "autoLoad": true,
+               autoRotate: -3,
+               "compass": true,
+               "northOffset": 0,
+              hotSpots: [
+                  {
+                       "pitch": 0,
+                       "yaw": -2,
+                       type: 'scene',
+                       text: 'Kolidor Depan',
+                       sceneId: 'd2'
+                   },
+                   {
+                       "pitch": 0,
+                       "yaw": 145,
+                       type: 'info',
+                       text: 'Gerbang Masuk',
+                       sceneId: 'd2'
+                   },
+             
+              ]
           },
-          scenes: {
-            depan: {
-                  title: 'Living Room',
-                  pitch: 0,
-                  yaw: 0,
-                  hfov: 100,
-                  type: 'equirectangular',
-                  panorama: 'https://i.ibb.co/sjHJ5dX/a-large-living-room-with-a-large-glass-wall-atk4vxoi.jpg',
-                  "autoLoad": true,
-                   autoRotate: -3,
-                   "compass": true,
-                   "northOffset": -150.5,
-                  hotSpots: [
-                      {
-                          pitch: 0,
-                          yaw: -75,
-                          type: 'scene',
-                          text: 'Kitchen',
-                          sceneId: 'jfk'
-                      },
-                      {
-                          pitch: 0,
-                          yaw: -115,
-                          type: 'scene',
-                          text: 'Kamar',
-                          sceneId: 'Kamar'
-                      },
-                      {
-                           "pitch": -30,
-                           "yaw": 5,
-                           "type": "info",
-                            "text": "Living Room",
-                            "URL": ""
-                       },
-                       {
-                           "pitch": -3,
-                           "yaw": -88,
-                           "type": "info",
-                            "text": "Dining Room",
-                            "URL": ""
-                       },
-                       {
-                           "pitch": -3,
-                           "yaw": -105,
-                           "type": "info",
-                            "text": "Dry Kitchen Area",
-                            "URL": ""
-                       },
-                  ]
-              },
-              jfk: {
-                  title: 'JFK',
-                  pitch: 0,
-                  yaw: 0,
-                  hfov: 100,
-                  type: 'equirectangular',
-                  panorama: 'https://i.ibb.co/Wgnpsxb/home-interior-architecture-mzsosw8o.jpg',
-                  "autoLoad": true,
-                   "autoRotate": -3,
-                   "compass": true,
-                   "northOffset": 247.5,
-                  hotSpots: [
-                      {
-                          pitch: -3,
-                          yaw: 102,
-                          type: 'scene',
-                          text: 'Living Room',
-                          sceneId: 'depan'
-                      },
-                      {
-                          pitch: -13,
-                          yaw: -23,
-                          "type": "info",
-                            "text": "Area Santai",
-                            "URL": ""
-                      },
-                      {
-                          pitch: -25,
-                          yaw: -115,
-                          "type": "info",
-                            "text": "Area TV",
-                            "URL": ""
-                      }
-                  ]
-              },
-              Kamar: {
-                  title: 'ar',
-                  pitch: 0,
-                  yaw: 0,
-                  hfov: 100,
-                  type: 'equirectangular',
-                  panorama: 'https://i.ibb.co/z7ZM0xC/tu09tpc-a-large-bed-in-a-room.jpg',
-                  "autoLoad": true,
-                   "autoRotate": -3,
-                  hotSpots: [
-                      {
-                          pitch: 0,
-                          yaw: 20,
-                          type: 'scene',
-                          text: 'Depan',
-                          sceneId: 'depan'
-                      },
-                      {
-                          pitch: 0,
-                          yaw: 122,
-                          "type": "info",
-                            "text": "WC",
-                            "URL": ""
-                      }
-                  ]
-              }
-              
-          }
-      });
-  </script>
+          d2: {
+              title: 'Kolidor Depan',
+              pitch: 0,
+              yaw: 0,
+              hfov: 100,
+              type: 'equirectangular',
+              panorama: 'https://i.ibb.co/YLYm2SW/p2.jpg',
+              "autoLoad": true,
+               autoRotate: -3,
+               "compass": true,
+               "northOffset": -150.5,
+              hotSpots: [
+              {
+                       "pitch": -0,
+                       "yaw": 20,
+                       type: 'scene',
+                       text: 'Carport',
+                       sceneId: 'd1'
+                   },
+                   {
+                       "pitch": 2,
+                       "yaw": 85,
+                       type: 'scene',
+                       text: 'Akses Tangga',
+                       sceneId: 'd3'
+                   },
+                   {
+                       "pitch": -0,
+                       "yaw": -180,
+                       type: 'info',
+                       text: 'Area Belakang Rumah',
+                       sceneId: ''
+                   },
+             
+              ]
+          },
+          d3: {
+              title: 'Akses Tangga',
+              pitch: 0,
+              yaw: 0,
+              hfov: 100,
+              type: 'equirectangular',
+              panorama: 'https://i.ibb.co/Ss8s8my/p3.jpg',
+              "autoLoad": true,
+               autoRotate: -3,
+               "compass": true,
+               "northOffset": -150.5,
+              hotSpots: [
+                  {
+                       "pitch": 20,
+                       "yaw": 16,
+                       type: 'scene',
+                       text: 'Ruang Keluarga',
+                       sceneId: 'd4'
+                   },
+
+                   {
+                       "pitch": -45,
+                       "yaw": -70,
+                       type: 'scene',
+                       text: 'Kolidor Depan',
+                       sceneId: 'd2'
+                   },
+             
+              ]
+          },
+          d4: {
+              title: 'Ruang Keluarga',
+              pitch: 0,
+              yaw: 0,
+              hfov: 100,
+              type: 'equirectangular',
+              panorama: 'https://i.ibb.co/x19MR8K/p4.jpg',
+              "autoLoad": true,
+               autoRotate: -3,
+               "compass": true,
+               "northOffset": -150.5,
+              hotSpots: [
+                   {
+                       "pitch": 2,
+                       "yaw": 40,
+                       type: 'scene',
+                       text: 'Kamar Utama',
+                       sceneId: 'd5'
+                   },
+                   {
+                       "pitch": 2,
+                       "yaw": -35,
+                       type: 'scene',
+                       text: 'Kamar Anak',
+                       sceneId: 'd6'
+                   },
+                   {
+                       "pitch": -37,
+                       "yaw": -105,
+                       type: 'scene',
+                       text: 'Akses Tangga LT 1',
+                       sceneId: 'd3'
+                   },
+                   {
+                       "pitch": -24,
+                       "yaw": -137,
+                       type: 'scene',
+                       text: 'Lantai 3',
+                       sceneId: 'd7'
+                   },
+             
+              ]
+          },
+          d5: {
+              title: 'Kamar Utama',
+              pitch: 0,
+              yaw: 0,
+              hfov: 100,
+              type: 'equirectangular',
+              panorama: 'https://i.ibb.co/xLRxtvJ/p5.jpg',
+              "autoLoad": true,
+               autoRotate: -3,
+               "compass": true,
+               "northOffset": -150.5,
+              hotSpots: [
+                   {
+                       "pitch": 0,
+                       "yaw": -3,
+                       type: 'info',
+                       text: 'WC',
+                       sceneId: 'd4'
+                   },
+                   {
+                       "pitch": 0,
+                       "yaw": 62,
+                       type: 'scene',
+                       text: 'Ruang Keluarga',
+                       sceneId: 'd4'
+                   },
+                   {
+                       "pitch": -43,
+                       "yaw": -140,
+                       type: 'info',
+                       text: 'Balkon Kamar',
+                       sceneId: 'd4'
+                   },
+
+             
+              ]
+          },
+          d6: {
+              title: 'Kamar Anak',
+              pitch: 0,
+              yaw: 0,
+              hfov: 100,
+              type: 'equirectangular',
+              panorama: 'https://i.ibb.co/pZ3y4kX/p6.jpg',
+              "autoLoad": true,
+               autoRotate: -3,
+               "compass": true,
+               "northOffset": -150.5,
+              hotSpots: [
+                  {
+                       "pitch": -2,
+                       "yaw": -32,
+                       type: 'scene',
+                       text: 'Ruang Keluarga',
+                       sceneId: 'd4'
+                   },
+                  
+             
+              ]
+          },
+          d7: {
+              title: 'Kolidor Lantai 3',
+              pitch: 0,
+              yaw: 0,
+              hfov: 100,
+              type: 'equirectangular',
+              panorama: 'https://i.ibb.co/VMb9wM8/p7.jpg',
+              "autoLoad": true,
+               autoRotate: -3,
+               "compass": true,
+               "northOffset": -150.5,
+              hotSpots: [
+
+                   {
+                       "pitch": -10,
+                       "yaw": 65,
+                       type: 'info',
+                       text: 'Area Santai',
+                       sceneId: 'd3'
+                   },
+                   {
+                       "pitch": -20,
+                       "yaw": 10,
+                       type: 'scene',
+                       text: 'Ruang Tamu & Dapur',
+                       sceneId: 'd9'
+                   },
+                   {
+                       "pitch": -30,
+                       "yaw": -80,
+                       type: 'scene',
+                       text: 'Mushola',
+                       sceneId: 'd8'
+                   },
+                   {
+                       "pitch": -50,
+                       "yaw": -175,
+                       type: 'scene',
+                       text: 'Akses Tangga Lantai 2',
+                       sceneId: 'd4'
+                   },
+                   {
+                       "pitch": -10,
+                       "yaw": -130,
+                       type: 'info',
+                       text: 'Tempat Laundry',
+                       sceneId: 'd4'
+                   },
+             
+              ]
+          },
+          d8: {
+              title: 'Mushola',
+              pitch: 0,
+              yaw: 0,
+              hfov: 100,
+              type: 'equirectangular',
+              panorama: 'https://i.ibb.co/Z2nJyn2/p8.jpg',
+              "autoLoad": true,
+               autoRotate: -3,
+               "compass": true,
+               "northOffset": -150.5,
+              hotSpots: [
+
+                   {
+                       "pitch": -25,
+                       "yaw": -50
+                       ,
+                       type: 'scene',
+                       text: 'Kolidor Lantai 3',
+                       sceneId: 'd7'
+                   },
+                   {
+                       "pitch": -20,
+                       "yaw": 0
+                       ,
+                       type: 'info',
+                       text: 'Tempat Wudhu',
+                       sceneId: 'd6'
+                   },
+             
+              ]
+          },
+          d9: {
+              title: 'Ruang Tamu',
+              pitch: 0,
+              yaw: 0,
+              hfov: 100,
+              type: 'equirectangular',
+              panorama: 'https://i.ibb.co/R4gv1V4/p9.jpg',
+              "autoLoad": true,
+               autoRotate: -3,
+               "compass": true,
+               "northOffset": -150.5,
+              hotSpots: [
+
+                   {
+                       "pitch": -20,
+                       "yaw": 110
+                       ,
+                       type: 'scene',
+                       text: 'Area Outdoor',
+                       sceneId: 'd10'
+                   },
+                   {
+                       "pitch": -10,
+                       "yaw": -20
+                       ,
+                       type: 'info',
+                       text: 'Kitchen',
+                       sceneId: 'd6'
+                   },
+                   {
+                       "pitch": -20,
+                       "yaw": -60
+                       ,
+                       type: 'scene',
+                       text: 'Kolidor Lantai 3',
+                       sceneId: 'd7'
+                   },
+             
+              ]
+          },
+          d10: {
+              title: 'Area Outdoor',
+              pitch: 0,
+              yaw: 0,
+              hfov: 100,
+              type: 'equirectangular',
+              panorama: 'https://i.ibb.co/R93cxzh/p10.jpg',
+              "autoLoad": true,
+               autoRotate: -3,
+               "compass": true,
+               "northOffset": -150.5,
+              hotSpots: [
+
+                   {
+                       "pitch": -15,
+                       "yaw": 57
+                       ,
+                       type: 'scene',
+                       text: 'Ruang Tamu',
+                       sceneId: 'd6'
+                   },
+                  
+             
+              ]
+          },
+          
+         
+          
+      }
+  });
 </script>
-    <!-- ======= Portfolio Section ======= -->
+</script>
+<!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio section-bg">
       <div class="container" data-aos="fade-up">
 
